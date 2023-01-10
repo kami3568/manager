@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
 public class ManagerTest {
     String film1 = "film1";
     String film2 = "film2";
@@ -78,8 +77,8 @@ public class ManagerTest {
         manager.add(film11);
 
 
-        String[] expected = {film11, film10, film9, film8, film7, film6, film5, film4, film3, film2, film1};
-        String[] actual = manager.findLast();
+        String[] expected = {film1, film2, film3, film4, film5, film6, film7, film8, film9, film10, film11};
+        String[] actual = manager.findAll();
         assertArrayEquals(expected, actual);
 
     }
