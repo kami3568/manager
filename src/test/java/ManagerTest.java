@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -14,6 +15,8 @@ public class ManagerTest {
     String film10 = "film10";
     String film11 = "film11";
     String film12 = "film12";
+
+    @BeforeEach
 
     @Test
     public void allFilms() {
@@ -104,4 +107,23 @@ public class ManagerTest {
 
 
     }
-}
+    @Test
+    public void MoreLimited() {
+        Manager manager = new Manager(10);
+        manager.add(film1);
+        manager.add(film2);
+        manager.add(film3);
+        manager.add(film4);
+        manager.add(film5);
+        manager.add(film6);
+        manager.add(film7);
+        manager.add(film8);
+        manager.add(film9);
+        manager.add(film10);
+        manager.add(film11);
+
+        String[] expected = {film11, film10, film9, film8, film7, film6, film5, film4, film3, film2, film1};
+        String[] actual = manager.findLast();
+        assertArrayEquals(expected, actual);
+    }
+    }
