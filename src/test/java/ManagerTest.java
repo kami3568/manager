@@ -109,7 +109,7 @@ public class ManagerTest {
     }
     @Test
     public void MoreLimited() {
-        Manager manager = new Manager(10);
+        Manager manager = new Manager(11);
         manager.add(film1);
         manager.add(film2);
         manager.add(film3);
