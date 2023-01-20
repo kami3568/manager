@@ -38,7 +38,7 @@ public class ManagerTest {
     @Test
     public void showLast() {
 
-        Manager manager = new Manager(10);
+        Manager manager = new Manager();
         manager.add(film1);
         manager.add(film2);
         manager.add(film3);
@@ -52,7 +52,7 @@ public class ManagerTest {
 
     @Test
     public void LessThanLimited() {
-        Manager manager = new Manager(4);
+        Manager manager = new Manager();
         manager.add(film1);
         manager.add(film2);
         manager.add(film3);
@@ -66,7 +66,7 @@ public class ManagerTest {
     }
     @Test
     public void MoreThanLimited() {
-        Manager manager = new Manager(11);
+        Manager manager = new Manager();
         manager.add(film1);
         manager.add(film2);
         manager.add(film3);
@@ -89,7 +89,7 @@ public class ManagerTest {
 
     @Test
     public void Limited() {
-        Manager manager = new Manager(10);
+        Manager manager = new Manager();
         manager.add(film1);
         manager.add(film2);
         manager.add(film3);
@@ -109,7 +109,7 @@ public class ManagerTest {
     }
     @Test
     public void MoreLimited() {
-        Manager manager = new Manager(12);
+        Manager manager = new Manager();
         manager.add(film1);
         manager.add(film2);
         manager.add(film3);
@@ -120,9 +120,13 @@ public class ManagerTest {
         manager.add(film8);
         manager.add(film9);
         manager.add(film10);
+        manager.add(film11);
+        manager.add(film12);
 
 
-        String[] expected = {film10, film9, film8, film7, film6, film5, film4, film3, film2, film1};
+
+
+        String[] expected = {film12, film11, film10, film9, film8, film7, film6, film5, film4, film3};
         String[] actual = manager.findLast();
         assertArrayEquals(expected, actual);
     }
